@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# code nicht geändert, nur bash geübt.
 import sys
 from decimal import Decimal
 

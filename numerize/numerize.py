@@ -20,13 +20,14 @@ def drop_zero(n):
     return n.rstrip('0').rstrip('.') if '.' in n else n
 
 def numerize(n, decimals=2):
+    n_split = str(abs(n)).split('.')[0]
     n_neg = int(n)
     n_int = abs(Decimal(n))
     is_negative_string = ""
     if n_neg < 0:
         is_negative_string = "-"
-    if len(str(n_int)) <= 15:
-        return is_negative_string + str(drop_zero(round_num(n_int / len_destinator[len(str(n_int))], decimals))) + KMBT[len(str(n_int))]
+    if len(n_split) <= 15:
+        return is_negative_string + str(drop_zero(round_num(n_int / len_destinator[len(n_split)], decimals))) + KMBT[len(n_split)]
     else:
         return is_negative_string + str(n_int)
 
